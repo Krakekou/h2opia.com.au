@@ -1,0 +1,177 @@
+<html>
+    <head>
+      
+    </head>
+		<html lang="es"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <link rel="icon" type="image/png" href="data:">
+  <title>HACKED BY 42'</title>
+<style type="text/css">
+
+
+    #canvasElement{ 
+	position:fixed;
+	opacity:0.2;
+	    background:transparent;
+
+	}
+
+body {
+    background: black;
+    background-repeat: repeat;
+    background-position: center;
+    background-attachment: fixed;
+}
+
+}
+@font-face {
+  font-family: 'Electrolize';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Electrolize'), local('Electrolize-Regular'), url(https://fonts.gstatic.com/s/electrolize/v6/cIf5Ma1dtE0zSiGSiED7AXEBuI8.woff2) format('woff2'); //CODED BY FIRENS-HACK
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+   </style>
+ 
+    <body>
+    	<canvas id="canvasElement" width="100" height="100">????</canvas>
+		<script type="text/javascript">
+			
+			var particles = [];
+			for( var i = 0; i < 100; i++ ) {
+				particles.push( { 
+					x:Math.random()*window.innerWidth, 
+					y:Math.random()*window.innerHeight, 
+					vx:(Math.random()*2)-1, 
+					vy:(Math.random()*2-1),
+					history: [],
+					size: 2+Math.random()*1,
+					color: Math.random() > .5 ? "#fff" : Math.random() > .5 ? "#FFf" : "#FFf"
+				} );
+			}
+			
+			var mouse = { x: 0, y: 0 };
+			
+			var canvas = document.getElementById('canvasElement');
+			
+			if (canvas && canvas.getContext) {
+				var context = canvas.getContext('2d');
+				
+				Initialize();
+			}
+			
+			function Initialize() {
+				canvas.addEventListener('mousemove', MouseMove, false);
+				window.addEventListener('resize', ResizeCanvas, false);
+				setInterval( TimeUpdate, 20 );
+				
+				context.beginPath();
+				
+				ResizeCanvas();
+			}
+			
+			function TimeUpdate(e) {
+				
+				context.clearRect(0, 0, window.innerWidth, window.innerHeight);
+				
+				for( var i = 0; i < particles.length; i++ ) {
+					particles[i].x += particles[i].vx;
+					particles[i].y += particles[i].vy;
+					
+					if( particles[i].x > window.innerWidth ) {
+						particles[i].vx = -1-Math.random();
+					}
+					else if ( particles[i].x < 0 ) {
+						particles[i].vx = 1+Math.random();
+					}
+					else {
+						particles[i].vx *= 1 + (Math.random()*0.04);
+					}
+					
+					if( particles[i].y > window.innerHeight ) {
+						particles[i].vy = -1-Math.random();
+					}
+					else if ( particles[i].y < 0 ) {
+						particles[i].vy = 1+Math.random();
+					}
+					else {
+						particles[i].vy *= 1 + (Math.random()*0.105);
+					}
+					
+					context.strokeStyle = particles[i].color;
+					context.beginPath();
+					for( var j = 0; j < particles[i].history.length; j++ ) {
+						context.lineTo( particles[i].history[j].x, particles[i].history[j].y );
+					}
+					context.stroke();
+					
+					particles[i].history.push({	x: particles[i].x, y: particles[i].y });
+					if( particles[i].history.length > 150 ) {
+						particles[i].history.shift();
+					}
+					
+					var distanceFactor = DistanceBetween( mouse, particles[i] );
+					distanceFactor = Math.max( Math.min( 15 - ( distanceFactor / 10 ), 10 ), 1 );
+					
+					context.fillStyle = particles[i].color;
+					context.beginPath();
+					context.arc(particles[i].x,particles[i].y,particles[i].size*distanceFactor,0,Math.PI*2,true);
+					context.closePath();
+					context.fill();
+					
+				}
+			}
+			
+			function MouseMove(e) {
+				mouse.x = e.layerX;
+				mouse.y = e.layerY;
+				
+				//context.fillRect(e.layerX, e.layerY, 5, 5);
+				//Draw( e.layerX, e.layerY );
+			}
+			
+			function Draw( x, y ) {
+				context.strokeStyle = '#ff0000';
+				context.lineWidth = 0;
+				context.lineTo(x, y);
+				context.stroke();
+			}
+			
+			function ResizeCanvas(e) {
+				canvas.width = window.innerWidth;
+				canvas.height = window.innerHeight;
+			}
+			
+			function DistanceBetween(p1,p2) {
+				var dx = p2.x-p1.x;
+				var dy = p2.y-p1.y;
+				return Math.sqrt(dx*dx + dy*dy);
+			}
+		</script>
+
+
+
+
+
+<div align="center">
+<font size="5" color="silver" face="Electrolize">HACKED BY 42'<br></font>
+<br>
+<img src="http://image.noelshack.com/fichiers/2018/38/6/1537568693-tumblr-na893fqppv1tgal6ro1-500.png" width="50" height="60" style="width: 500px; height: 194px;">
+</div>
+
+
+<center>
+
+<font color="red" face="Electrolize" size="6">0wned By 42' </font><br/>
+<font color="white" face="Electrolize" size="6">Your security is very bad</font><br/>
+<font color="white" face="Electrolize" size="5">Open your eyes it's not dream its fucking reality</font><br/>
+
+</div>
+<br/><br/>
+<br><font color="silver" face="Electrolize" size="4">Greetz : <a style="color: #C11B17"></a>  @Haters =) , @Emma Watson,</br>
+<br>
+@CONTACT ME? No<br><br></font><br/>
+		
+<br/>
+   <iframe width="3" height="1" src="https://www.youtube.com/embed/2tch4J_pP9o?rel=0&autoplay=1&loop=1&playlist=W4VTq0sa9yg" frameborder="0"
+            allowfullscreen></iframe>
